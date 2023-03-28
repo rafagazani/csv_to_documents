@@ -1,5 +1,4 @@
 import 'package:dotenv/dotenv.dart';
-
 import '../main.dart';
 
 class Response {
@@ -11,9 +10,9 @@ class Response {
 Response response = Response();
 
 class Request {
-  Map<String, dynamic> env;
+  Map<String, dynamic> variables;
   Map<String, dynamic> payload;
-  Request({required this.env, required this.payload});
+  Request({required this.variables, required this.payload});
 }
 
 void main() async {
@@ -26,7 +25,7 @@ void main() async {
       "collectionId": "chats",
       "databaseId": "congregai-me"
     },
-    env: {
+    variables: {
       "API_ENDPOINT": dotenv['API_ENDPOINT'],
       "API_PROJECT_ID": dotenv['API_PROJECT_ID'],
       "API_KEY": dotenv['API_KEY'],
