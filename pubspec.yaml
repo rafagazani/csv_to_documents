@@ -1,0 +1,16 @@
+name: csv_to_documents
+description: reads a spreadsheet and converts it into documents.
+version: 1.0.0
+
+environment:
+  sdk: '>=2.16.0 <3.0.0'
+
+
+dependencies:
+  dotenv: ^4.1.0
+  dart_appwrite: ^7.3.0
+  csv: ^5.0.1
+  
+
+
+
