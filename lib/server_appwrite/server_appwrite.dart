@@ -21,7 +21,8 @@ class ServerAppwrite {
     client = Client()
         .setEndpoint(host) // Make sure your endpoint is accessible
         .setProject(project) // Your project ID
-        .setKey(key);
+        .setKey(key)
+      .setSelfSigned(status: true);
 
 
     account = Account(client);
