@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dotenv/dotenv.dart';
 import '../main.dart';
 
@@ -11,7 +13,7 @@ Response response = Response();
 
 class Request {
   Map<String, dynamic> variables;
-  Map<String, dynamic> payload;
+  String payload;
   Request({required this.variables, required this.payload});
 }
 
@@ -19,12 +21,14 @@ void main() async {
   var dotenv = DotEnv(includePlatformEnvironment: true)..load();
 
   Request request = Request(
-    payload: {
-      "fileId": "64230a2594e30fb2ed20",
-      "storageId": "worksheets",
-      "collectionId": "chats",
-      "databaseId": "congregai-me"
-    },
+    payload: jsonEncode(
+      {
+        "fileId": "64230a2594e30fb2ed20",
+        "storageId": "worksheets",
+        "collectionId": "chats",
+        "databaseId": "congregai-me"
+      },
+    ),
     variables: {
       "API_ENDPOINT": dotenv['API_ENDPOINT'],
       "API_PROJECT_ID": dotenv['API_PROJECT_ID'],
