@@ -6,3 +6,5 @@ to run main_test.dart create an .env file in the root of the project containing:
 API_ENDPOINT=https://cloud.appwrite.io/v1<br>
 API_PROJECT_ID=your project<br>
 API_KEY=your key<br>
+
+main_test.dart must be run on your local machine, outside of appwrite
